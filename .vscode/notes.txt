@@ -1,0 +1,21 @@
+Template Update:
+
+drizzle kit commands are modified
+prepareMigration.ts
+tsconfig.json
+see the const foreignkeyRef in schema file
+utils should be named (*.util.ts)
+take a look at env.ts( rename it to env.util.ts)
+major server file refactorization( session.config, store.config)
+look at the server file
+find out why are you declaring and extending the express.req object in the template( current project has implementation like in socket.d.ts)
+from this endpoint "/verify/:code",
+remove "insertDevice" because user is never authenticated, so this inserts device info without user info
+removed all throw new errors instead return a json with message in controllers
+created resErrorHandler in auth.ts
+use resErrorHandler every where( no no just create one responseHandler() use it for both success/error calls )
+rate limiter( throttle.middleware , conneciton.config is also modified)
+io stuff ( session, user id population, socket.middleware.ts )
+switch to postgres
+do test the websocket connection from client
+must add lint( see bookmarked lint( github ) )
